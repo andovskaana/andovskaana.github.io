@@ -1,0 +1,257 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Andovska</title>
+    <style>
+        body{
+            background-color: #FF9EAA;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /* Setting Navigation Bar */
+        #bar {
+            background-color: #ffffff;
+            width: 100%;
+            height: 10%;
+        }
+        /* Setting the Link Tags */
+        a {
+            text-decoration: none;
+            color: #da6969;
+            padding: 0.8rem 1.2rem;
+            border-radius: 3%;
+            cursor: pointer;
+        }
+        h1 {
+            float: left;
+            padding-left: 2%;
+            font-size: 200%; 
+            position: relative;
+            top: 0%;
+        }
+        h1 a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #da6969;
+            transition: width 0.5s;
+        }
+        h1 a:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        span {
+            color: #FF9EAA;
+        }
+        .nav li a {
+            font-size: 100%;
+            font-weight: 900;
+        }
+        ul {
+            text-align: right;
+            list-style-type: none;
+            text-indent: 1.2em;
+            padding-right: 5%;
+        }
+        li {
+            text-align: right;
+            display: inline-block;
+            padding-top: 2em;
+        }
+        li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #da6969;
+            transition: width 0.5s;
+        }
+        li a:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        li a {
+            position: relative;
+        }
+        li a::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        /* Setting the Section */
+        .section {
+            width: 100%;
+            height: 79%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        /* Setting the left region */
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0% 20%;
+        }
+        /* Setting the h2 Heading */
+        h2 {
+            font-size: 3em;
+            font-weight: 900;
+            color: #da6969;
+            text-transform: uppercase;
+            margin-bottom: 0rem;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        h2 span {
+            color: #fff;
+        }
+        /* Setting the default color for the link of the button */
+        p {
+            font-size: 1.5vw;
+            font-weight: 600;
+            color: #f1e7e7;
+            margin-bottom: 3vw;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin-right: 10vw;
+            text-align: center;
+        }
+        button a {
+            text-decoration: none;
+        }
+        /* Custom button to play the game */
+        button {
+            width: 20vw;
+            padding: 5% 10%;
+            font-size: 2vw;
+            border: none;
+            background: #da6969;
+            color: white;
+            cursor: pointer;
+            border-radius: 50px;
+            text-transform: uppercase;
+            }
+        /* Implementing button action when the button is hovered */
+        button:hover {
+            background: #eebbbb;
+            color: #FF9EAA;
+            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+        }
+        /* Setting Social Media links  in a Table*/
+        .icon {
+            width: 3vw;
+            height: 4vh;
+        }
+        td {
+            padding: 20%;
+            margin: 70%;
+        }
+        table {
+            margin-left: 20%;
+            margin-top: 5%;
+        }
+        /* Setting the right region */
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0rem 2rem;
+        }
+        #image1, #image2 {
+           width: 50%;
+           height: 50%;
+        }
+        #image1 {
+            width: 20vw;
+            height: 20vw;
+            position: absolute;
+            opacity: 1;
+            transition: opacity 1s ease-out;
+            animation: fade1 4s infinite;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.0);
+        }
+        /* Creating positioning for the first image and adding animation */
+        #image2 {
+            width: 20vw;
+            height: 20vw;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-out;
+            animation: fade2 4s infinite;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.0);
+        }
+        /* Animation for the first Image to fade out */
+        @keyframes fade1 {
+            0%, 40% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+        /* Animation for the second Image to display after the first image is disabled */
+        @keyframes fade2 {
+            0%, 40% { opacity: 0; }
+            50%, 100% { opacity: 1; }
+        }
+        /* Setting the Footer */
+        #footer {
+            position: fixed; 
+            bottom: 0;
+            left: 0; 
+            width: 100%; 
+            height: 8%; 
+            background-image: linear-gradient(to bottom, #FF9EAA, #FFD0D0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Setting Navigation Bar -->
+    <nav id="bar">
+        <h1><a href="index.html" id="home">Ана<span> Aндовска</span></a></h1>
+        <ul class="nav">
+          <li><a href="aboutme.html">ЗА МЕНЕ</a></li>
+          <li><a href="skills.html">ВЕШТИНИ</a></li>
+          <li><a href="contact.html">КОНТАКТ</a></li>  
+        </ul>
+    </nav>
+    <!-- Implementing a section and dividing it into two regions -->
+    <div class="section">
+        <div class="left">
+            <h2>Ана <span>Андовска</span></h2>
+            <p>"Добредојдовте на мојата веб страна!"<br>За повеќе информации за мене, кликнете на копчето "Video CV":</p>
+            <!-- Button for entering a Video Link CV -->
+            <nav>
+                <a href="https://www.youtube.com/watch?v=lmcHFFvAHaw&ab_channel=AnaAndovska" target="_blank"><button>Video CV</button></a>
+            </nav>
+            <!-- Social Media Icon Links -->
+            <table>
+            	<tr>
+            		<th>
+            			<a href="mailto:ana.andovska@students.finki.ukim.mk " target="_blank"><img class="icon" src="img/outlook.svg"></a>
+            		</th>
+                    <th></th>
+            		<th>
+            		<a href="https://github.com/andovskaana" target="_blank"><img class="icon" src="img/git.svg"></a>
+            		</th>
+            	</tr>
+            </table>
+        </div>
+        <div class="right">
+            <img  id="image1" src="img/First.png" alt="Image 1">
+            <img  id="image2" src="img/Second.png" alt="Image 2">
+        </div>
+    </div>
+    <!-- Setting the Footer -->
+    <div id="footer"></div>
+</body>
+</html>
