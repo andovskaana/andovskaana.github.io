@@ -1,0 +1,287 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body{
+            background-color: #FF9EAA;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        /* Setting Navigation Bar */
+        #bar {
+            background-color: #ffffff;
+            width: 100%;
+            height: 10%;
+        }
+        /* Setting the Link Tags */
+        a {
+            text-decoration: none;
+            color: #da6969;
+            padding: 0.8rem 1.2rem;
+            border-radius: 3%;
+            cursor: pointer;
+        }
+        h1 {
+            float: left;
+            padding-left: 2%;
+            font-size: 200%; 
+            position: relative;
+            top: 0%;
+        }
+        h1 a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #da6969;
+            transition: width 0.5s;
+            
+        }
+        h1 a:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        span {
+            color: #FF9EAA;
+        }
+        .nav li a {
+            font-size: 100%;
+            font-weight: 900;
+        }
+        ul {
+            text-align: right;
+            list-style-type: none;
+            text-indent: 1.2em;
+            padding-right: 5%;
+        }
+        li {
+            text-align: right;
+            display: inline-block;
+            padding-top: 2em;
+            
+        }
+        li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #da6969;
+            transition: width 0.5s;
+            
+        }
+        li a:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        li a {
+            position: relative;
+            padding-bottom: 0.1em;
+        }
+        li a::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+           
+        }
+        .tab {
+            display: flex;
+            margin: 2% 20% 4%;
+            margin-bottom: 0;
+        }
+        .subtab {
+            flex: 1;
+            text-align: center;
+            font-size: 100%;
+            font-weight: 900;
+            color: #F2F2F2;
+            padding: 0.8rem 1.2rem;
+            border-radius: 3%;
+            cursor: pointer;   
+        }
+        .subtab::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #fafafa;
+            transition: width 0.5s;
+            margin-top: 1em;
+    
+        }
+        .subtab:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        .subtab .activetab {
+            width: 50%;
+        }
+        /* Setting the Footer */
+        #footer {
+            position: fixed; 
+            bottom: 0;
+            left: 0; 
+            width: 100%; 
+            height: 10%; 
+            background-image: linear-gradient(to bottom, #FF9EAA, #FFD0D0);
+        }
+        .changeCenter {
+            display:flex;
+            text-align: center;
+            font-size: 85%;
+            margin-top: 5em;
+        }
+        .center {
+            padding: 1em;
+            font-weight: 600;
+        }
+        img {
+            width: 20em;
+            height: 13em;
+        }
+        fieldset{
+            background-color: #FFD0D0;
+            border-radius: 0.3em;
+            border: 0.4em solid #F2F2F2;
+            width: 90%;
+            margin: auto;
+            height:50%;
+            padding: 2em;
+            margin-top: 1em;
+        }
+        
+        legend {
+            font-size: 110%;
+            font-weight: 700;
+            color: #da6969;
+            background-color: #f2f2f2;
+            /* padding: 0.8rem 1.2rem; */
+            padding: 0.5em;
+            border-radius: 3%;
+            cursor: pointer; 
+        }
+        legend::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #da6969;
+            transition: width 0.5s;
+        }
+        legend:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        .music {
+            font-size: 100%;
+            font-weight: 600;
+            padding: 1em;
+        }
+        #center {
+            /* Align center of the field set under the text */
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            gap: 1em;
+        }
+        .sport {
+            font-size: 100%;
+            font-weight: 600;
+            padding: 1em;
+        }
+        .bigger {
+            width: 21em;
+            height: 12em;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Scroll to top when legend is clicked
+        //   document.querySelectorAll('legend').forEach(function(legend) {
+        //     legend.addEventListener('click', function() {
+        //       window.scrollTo({ top: 0, behavior: 'smooth' });
+        //     });
+        //   });
+          
+          // Scroll to corresponding section when subtab is clicked
+          document.querySelectorAll('.subtab').forEach(function(subtab, index) {
+            subtab.addEventListener('click', function() {
+              var sections = document.querySelectorAll('.contentSWITCH');
+              var section = sections[index];
+              section.scrollIntoView({ behavior: 'smooth' });
+            });
+          });
+        });
+         // Scroll to top when legend is clicked
+        function scrolltop(){
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</head>
+<body>
+    <!-- Setting Navigation Bar -->
+    <nav id="bar">
+        <h1><a href="index.html">Ана<span> Aндовска</span></span></a></h1>
+        <ul class="nav">
+          <li><a href="aboutme.html">ЗА МЕНЕ</a></li>
+          <li><a href="skills.html">ВЕШТИНИ</a></li>
+          <li><a href="contact.html">КОНТАКТ</a></li>  
+        </ul>
+    </nav>
+    <!-- Setting the About Me tab feauture -->
+    <div class="tab">
+        <p class="subtab activetab">Образование</p>
+        <p class="subtab">Музика</p>
+        <p class="subtab">Спорт</p>
+    </div>
+    <div class="contentSWITCH">
+        <fieldset>
+            <legend onclick="scrolltop();">Образование</legend>
+        <ul class="changeCenter">
+            <li class="center">Oсновно во Димо Хаџи Димов 2009-2018</li>
+            <br>
+            <img src="img/Dimo.jpg" alt="">
+            <br>
+            <li class="center">Cредно во СУГС Орце Николов 2018-2022</li>
+            <br>
+            <img src="img/Orce.jpeg" alt="">
+            <br>
+            <li class="center">Mоментално студент на ФИНКИ (Факултет за информатички науки и компјутерско инженерство)</li>
+            <br>
+            <img src="img/Kvalitet.jpg" alt="">
+        </ul>
+        </fieldset>
+    </div>
+    <div class="contentSWITCH">
+        <fieldset>
+            <legend onclick="scrolltop();">Музика</legend>
+            <p class="music">Од 2018 година свирам гитара. Во летото 2022 волoнтирав во музичкото училиште „EНСО“, каде што водев почетнички часови по гитара за деца од 7 до 14 години 
+                и помагав со организацијата на истите. Со ова искуство ги развивав, не само моите вештини во гитара, туку и моите лидерски способнити, одговорност и организациски способности.
+            </p>
+            <div id="center">
+                <img class="bigger" src="img/Gitar.jpeg" alt="" style="float: left;">
+                <img class="bigger" src="img/lesson.jpg" alt="">
+            </div>
+        </fieldset>
+    </div>
+    <div class="contentSWITCH">
+        <fieldset>
+            <legend onclick="scrolltop();">Спорт</legend>
+            <p class="sport">Тренирав и се натпреварував во тенис 8 години од 2009 до 2017, често летно хоби ми е пливање и кајакарење, додека во зимскиот период скијам. 
+            </p>
+            <div id="center">
+                <img class="bigger" src="img/tennis.jpg" alt="">
+                <img class="bigger" src="img/swimming.jpg" alt="">
+                <img class="bigger" src="img/skiing.jpg" alt="">
+            </div>
+        </fieldset>
+    </div>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <!-- Setting the Footer -->
+    <div id="footer"></div>
+</body>
+</html>

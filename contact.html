@@ -1,0 +1,216 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        body{
+            background-color: #FF9EAA;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        /* Setting Navigation Bar */
+        #bar {
+            background-color: #ffffff;
+            width: 100%;
+            height: 10%;
+        }
+        /* Setting the Link Tags */
+        a {
+            text-decoration: none;
+            color: #da6969;
+            padding: 0.8rem 1.2rem;
+            border-radius: 3%;
+            cursor: pointer;
+        }
+        h1 {
+            float: left;
+            padding-left: 2%;
+            font-size: 200%; 
+            position: relative;
+            top: 0%;
+        }
+        h1 a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #da6969;
+            transition: width 0.5s;
+        }
+        h1 a:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        span {
+            color: #FF9EAA;
+        }
+        .nav li a {
+            font-size: 100%;
+            font-weight: 900;
+        }
+        ul {
+            text-align: right;
+            list-style-type: none;
+            text-indent: 1.2em;
+            padding-right: 5%;
+        }
+        li {
+            text-align: right;
+            display: inline-block;
+            padding-top: 2em;
+        }
+        li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0.1em;
+            background: #da6969;
+            transition: width 0.5s;
+        }
+        li a:hover::after {
+            width: 100%;
+            transition: width 0.5s;
+        }
+        li a {
+            position: relative;
+            padding-bottom: 0.1em;
+        }
+        li a::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .section {
+            width: 100%;
+            height: 79%;
+        }
+        legend {
+            /* font-size: 100%;
+            font-weight: 900;
+            color: #da6969; */
+            font-size: 110%;
+            font-weight: 700;
+            color: #da6969;
+            background-color: #f2f2f2;
+            /* padding: 0.8rem 1.2rem; */
+            padding: 0.5em;
+            border-radius: 3%;
+            margin-bottom: 0;
+        }
+        form{
+            text-align: center;
+            margin-top: 4vw;
+        }
+        fieldset{
+            background-color: #FFD0D0;
+            border-radius: 0.3em;
+            border: 0.4em solid #F2F2F2;
+            width: 60%;
+            height: 73%;
+            margin: auto;
+            padding: 3em;
+            padding-top: 2em;
+            font-size: 100%;
+        }
+        input, textarea{
+            width: 50%;
+            height: 8%;
+            margin: auto;
+            padding: 0.4em;
+            margin-top: 0.5em;
+        }
+        textarea{
+            height: 50%;
+        }
+        #submit{
+            text-align: center;
+            margin: 0%;
+            padding-top: 0.5em;
+        }
+        #button {
+            background-color:#da6969;
+            color: #F2F2F2;
+            border-radius: 0.5em;
+            width: 30%;
+            height: 10%;
+            /* padding: 0.5em; */
+            padding-right: 1em;
+            padding-left: 1em;
+            font-size: 1em;
+            border: 0.2em solid #F2F2F2;
+        }
+        label {
+            font-weight: 600;
+            color: #da6969;
+        }
+        /* Setting the Footer */
+        #footer {
+            position: fixed; 
+            bottom: 0;
+            left: 0; 
+            width: 100%; 
+            height: 8%; 
+            background-image: linear-gradient(to bottom, #FF9EAA, #FFD0D0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Setting Navigation Bar -->
+    <nav id="bar">
+        <h1><a href="index.html">Ана<span> Aндовска</span></span></a></h1>
+        <ul class="nav">
+          <li><a href="aboutme.html">ЗА МЕНЕ</a></li>
+          <li><a href="skills.html">ВЕШТИНИ</a></li>
+          <li><a href="contact.html">КОНТАКТ</a></li>  
+        </ul>
+    </nav>
+    <!-- Setting the Contact Form Section -->
+    <div class="section">
+        <form id="formID">
+            <fieldset>
+                <legend> Контакт </legend>
+                <label for="name">Full Name:</label>
+                <br>
+                <input type="text" required="" placeholder="Write Full Name ex. Sam Smith" id="name" >
+                <br> <br>
+                <label>E-mail:</label><br> <!-- CHANGE TO PARTICULAR EMAIL-->
+                <input type="email" placeholder="Example@students.finki.ukim.mk" id="email">
+                <br> <br>
+                <label>Message:<br>
+                <textarea name="subject" placeholder="Write Something..." id="subject"></textarea>
+                </label>
+                <div id="submit"> <input type="submit" name="subbtn" value="Submit" id="button"></div>
+            </fieldset>
+        </form>
+    </div>
+    <!-- Setting the Footer -->
+    <div id="footer"></div>
+    <!-- Form Prototype Submission -->
+    <script>
+        document.getElementById("formID").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+
+            if (name == "" || email == "") {
+                alert("Ве молиме пополнете ги болдираните полиња!");
+            } else {
+                if (name.split(" ").length < 2) {
+                    alert("Ве молиме внесете го целото име!");
+                } else if (!email.endsWith("@students.finki.ukim.mk")) {
+                    alert("Ве молиме внесете валидна е-маил адреса!");
+                } else {
+                    alert("Вашата порака е успешно испратена!");
+                    document.getElementById("name").value = ""; // Clear the input fields
+                    document.getElementById("email").value = "";
+                    document.getElementById("subject").value = "";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
